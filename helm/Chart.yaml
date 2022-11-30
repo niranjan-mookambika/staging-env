@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Vendormate staging environment
+name: staging-env
+version: "0.1.0"
