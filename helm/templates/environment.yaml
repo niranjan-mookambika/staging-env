@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: staging-environment
+  name: staging-env-environment
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
