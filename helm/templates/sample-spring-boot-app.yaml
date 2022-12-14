@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: appdev-staging-environment
+  name: sample-spring-boot-app-staging-environment
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -12,7 +12,7 @@ spec:
   source:
     path: helm
     repoURL: https://github.com/niranjan-mookambika/sample-spring-boot-app.git
-    targetRevision: v0.1.0
+    targetRevision: v0.2.0
     helm:
       version: v3
   destination:
