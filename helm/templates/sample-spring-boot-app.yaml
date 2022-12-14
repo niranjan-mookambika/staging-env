@@ -1,0 +1,24 @@
+---
+# Source: sample-spring-boot-app/templates/application.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appdev-staging-environment
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: staging-env
+  source:
+    path: helm
+    repoURL: https://github.com/niranjan-mookambika/sample-spring-boot-app.git
+    targetRevision: v0.1.0
+    helm:
+      version: v3
+  destination:
+    namespace: staging-env
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
